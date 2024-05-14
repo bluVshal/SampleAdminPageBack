@@ -7,7 +7,6 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const fs = require('file-system');
 
-const { port } = require('./config/config')
 const app = express();
 
 app.use(express.json());
@@ -29,7 +28,6 @@ const db = mysql.createConnection({
 
 app.get('/', (req, res) => {
     console.log('Server connected');
-    console.log(process.env.PORT);
     return res.json({Status: 'Server connected'})
 })
 
