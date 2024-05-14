@@ -7,8 +7,8 @@ import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import fs from 'file-system';
 
-
 const app = express();
+
 app.use(express.json());
 app.use(cors(
     {
@@ -124,7 +124,7 @@ app.post('/login', (req, res)=>{
 
 app.listen(63501, () => {
     console.log("Server Is Up And Running on Port 63501");
-})
+}) 
 
 
 function writeToFile(content){
