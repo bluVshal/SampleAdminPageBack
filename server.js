@@ -1,12 +1,13 @@
-import cookieParser from 'cookie-parser';
-import express from 'express';
-import moment from 'moment';
-import bcrypt from 'bcrypt';
-import mysql from 'mysql2';
-import cors from 'cors';
-import jwt from 'jsonwebtoken';
-import fs from 'file-system';
+const cookieParser = require('cookie-parser');
+const express = require('express');
+const moment = require('moment');
+const bcrypt = require('bcrypt');
+const mysql = require('mysql2');
+const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const fs = require('file-system');
 
+const { port } = require('./config/config')
 const app = express();
 
 app.use(express.json());
@@ -28,6 +29,7 @@ const db = mysql.createConnection({
 
 app.get('/', (req, res) => {
     console.log('Server connected');
+    console.log(process.env.PORT);
     return res.json({Status: 'Server connected'})
 })
 
